@@ -1,0 +1,21 @@
+# include <stdio.h>
+int main()
+{
+int tab[8], min, max, i;
+for(i=o;, i<8; i++){
+scanf("%d", &tab[i])
+}
+min=tab[0];
+max=tab[0];
+for( i=0; i<8; i++){
+if (tab[i]< min){
+min = tab[i];
+}
+if( tab[i] > max){
+max = tab[i]
+}
+}
+printf("Najmniejszy elenent w tablicy to:%d\n", min);
+printf(" Najwiekszy element w tablicy ti:%d\n", max);
+return0;
+}

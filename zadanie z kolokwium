@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int suma_elementow(int tab[], int rozmiar){
+    int suma = 0;
+    int i;
+    for(i=0; i<rozmiar;i++){
+        suma+=tab[i];
+    }
+    return suma;
+}
+
+ int main()
+{
+    int tab1[12]; 
+     int tab2[10]; 
+    int i;
+    
+     for(i=0; i<12;i++){
+        tab1[i]=i*2;
+    }
+    for(i=0; i<10;i++){
+        tab2[i]=i*2+1;
+    }
+    
+    printf("Wypisywanie elementów parzystych:\n");
+    for(i=0;i<12;i++){
+        printf("%d\n",tab1[i]);
+    }
+   
+    printf("Wypisywanie elementów nieparzystych:\n");
+    for(i=0;i<10;i++){
+        printf("%d\n",tab2[i]);
+    }
+    int rozmiartab1 = sizeof(tab1)/sizeof(tab1[0]); 
+    int rozmiartab2 = sizeof(tab2)/sizeof(tab2[0]); 
+
+printf("Rozmiar tab1 to: %d\n",  rozmiartab1);
+printf("Rozmiar tab2 to: %d\n", rozmiartab2);
+printf("Suma elementów tab1 to: %d\n", suma_elementow(tab2, rozmiartab2));
+printf("Suma elementów tab2 to: %d\n", suma_elementow(tab2, rozmiartab2));
+
+
+
+    return 0;
+}

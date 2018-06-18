@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 int suma(int tab[], int rozmiar){
    int suma=0;
     int i;
@@ -36,18 +38,41 @@ int main()
  int rozmiartab1 = sizeof(tab1)/sizeof(tab1[0]);
   int rozmiartab2 = sizeof(tab2)/sizeof(tab2[0]);
     for(i=0;i<rozmiartab1;i++){
-tab1[i] = rand() % range + 1;
- for(i=0;i<rozmiartab1;i++){
-       printf("tab1: %d\n",tab1[i]);
-       }
+        tab1[i] = rand() % range + 1;
+    }
+     printf("tab1: \n");
+    for(i=0;i<rozmiartab1;i++){
+       printf("%d ",tab1[i]);
+      }
        
       for(i=0;i<rozmiartab2; i++){
           tab2[i]= tab1[i]*tab1[i];
-      } for(i=0; i< rozmiartab2; i++){
-          printf("tab2: %d\n",tab2[i]);
+      } 
+      printf("\ntab2: \n");
+      for(i=0; i< rozmiartab2; i++){
+          printf("%d  ",tab2[i]);
       }
-      }
-    printf("Suma elementow w tablicy 1 to %d\n",suma(tab1,rozmiartab1));
+      i = 0;
+    printf("FIFO tab1:\n");
+    for(i = 0; i<rozmiartab1; i++){
+    printf ("%d ", tab1[i]);
+    }
+    i = 0;
+   printf("\nLIFO tab1:\n");
+   for(i = rozmiartab1 -1; i>-1; i--){
+    printf("%d ", tab1[i]);
+   }
+    i = 0;
+   printf("\nFIFO tab2:\n");
+   for(i = 0; i<rozmiartab2; i++){
+    printf ("%d ", tab2[i]);
+}
+   i = 0;
+    printf("\nLIFO tab2:\n");
+    for(i = rozmiartab2-1; i>-1 ; i--){
+    printf("%d ", tab2[i]);
+    }
+    printf("\nSuma elementow w tablicy 1 to %d\n",suma(tab1,rozmiartab1));
     printf("Suma elementow w tablicy 2 to %d\n",suma(tab2,rozmiartab2));
     printf("Najmniejszy element tabblicy 1 to %d\n",min(tab1,rozmiartab1));
     printf("Najmniejszy element tablicy 2 to %d\n", min( tab2, rozmiartab2));

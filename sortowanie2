@@ -1,0 +1,40 @@
+/* Sortowanie przez wstawianie. */
+ 
+#include <stdio.h>
+ 
+#define N 10
+ 
+main()
+{
+  int a[10]; /* Sortowana tablica. */
+  int i, j, v;
+ 
+  /* Wczytanie danych. */
+  printf("Podaj %d liczb calkowitych", N);
+  printf(" oddzielonych spacjami.\n");
+  for ( i = 0; i < N; i++ )
+    scanf("%d", &a[i]);
+  printf("Ciag do posortowania:\n");
+  for ( i = 0; i < N; i++ )
+    printf("%d, ", a[i]);
+  printf("\n");
+ 
+  /* Wlasciwe sortowanie. */
+  for ( i = 1; i < N; i++ ){
+  /* Nzm.: a[0]<=...<=a[i-1] */
+    v = a[i];
+    for ( j = i; (j > 0) && (a[j-1] > v) ; j-- )
+    /* Nzm.: v < a[j+1],...,a[i] */
+      a[j] = a[j-1];
+    a[j] = v;
+  }
+ 
+  /* Wypisanie wynikow. */
+  printf("Ciag posortowany:\n");
+  for ( i = 0; i < N; i++ )
+    printf("%d, ", a[i]);
+  printf("\n");
+ 
+  return 0;
+ 
+}
